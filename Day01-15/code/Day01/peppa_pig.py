@@ -15,15 +15,16 @@ def nose(x,y):
     begin_fill()
     a = 0.4
     for i in range(120):
+        left(3)
         if 0 <= i < 30 or 60 <= i <90:
             a = a + 0.08
             # 向左转3度
-            left(3)
+            # left(3)
             # 向前走
             forward(a)
         else:
             a = a - 0.08
-            left(3)
+            # left(3)
             forward(a)
     end_fill()
     penup()
@@ -31,6 +32,7 @@ def nose(x,y):
     forward(25)
     setheading(0)
     forward(10)
+    #画鼻孔
     pendown()
     # 设置画笔的颜色(红, 绿, 蓝)
     pencolor(255, 155, 192)
@@ -190,13 +192,21 @@ def setting():
 
 def main():
     """主函数"""
-    setting() 
+    #设置参数
+    setting()
+    #画鼻子
     nose(-100, 100)
+    #画头
     head(-69, 167)
+    #画耳朵
     ears(0, 160)
+    #画眼睛
     eyes(0, 140)
+    #画脸颊
     cheek(80, 10)
+    #画嘴巴
     mouth(-20, 30)
+    #相当于是turtle.mainloop()，用于固定显示窗口，否则执行后窗口自动消失
     done()
 
 
